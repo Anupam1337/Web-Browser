@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/options" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#555"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:background="@drawable/back"
+            android:onClick="Back" />
+
+        <Button
+            android:id="@+id/forwardButton"
+            android:layout_width="40sp"
+            android:layout_height="30sp"
+            android:background="@drawable/forward"
+            android:onClick="Forward" />
+
+        <Button
+            android:id="@+id/reloadButton"
+            android:layout_width="25sp"
+            android:layout_height="25sp"
+            android:layout_marginRight="5sp"
+            android:background="@drawable/refresh"
+            android:onClick="Reload" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="240sp"
+            app:cardCornerRadius="20sp"
+            android:background="#777"
+            android:layout_gravity="center"
+            android:layout_height="35sp" >
+
+            <EditText
+                android:id="@+id/url"
+                android:paddingLeft="5sp"
+                android:layout_width="200sp"
+                android:layout_height="40sp"
+                android:maxLines="1"
+                android:gravity="center"
+                android:text="https://www.google.com/" />
+        </android.support.v7.widget.CardView>
+
+        <Button
+            android:id="@+id/GoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="Go"
+            android:text="Go" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/Intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/swipe"
+        android:text="Created by:--ANUPAM MISHRA" />
+
+</RelativeLayout>
